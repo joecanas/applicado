@@ -43,7 +43,7 @@ There is an outstanding issue related to custom rendering of flash messages:  Wh
 
 ## Installation
 
-The demo is a Ruby on Rails application.
+The demo is a Ruby on Rails application, developed on a Windows PC.
 * Clone or [download](https://github.com/joecanas/applicado/archive/master.zip) the git repository
 
 In the application's main directory:
