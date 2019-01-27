@@ -23,14 +23,13 @@ There does not need to be any styling and we are not evaluating the frontend cod
 
 I added the following features not specified in the initial requirements:
 
-* Display posting date for each job listing.
 * Store a location field and display it for each job listing.
 * Display the posting date for each job listing.
-* Job applicants can add an optional message when applying to a job.
-* Applicants can see a list of jobs they have applied to.
+* Applicants can view a list of jobs they have applied to.
+* Applicants can add an optional message when applying to a job.
 * Employers can see the email address and message (if any) along with the name of each applicant who applied to their job openings.
 * Created an Admin user class and entitlements.
-* A "forgot password" reset request form (included with Devise gem installation). Note that the form is non-functional, as email capability has not been configured for the demo.
+* A "forgot password" reset request form (included with Devise gem installation). (The form is non-functional, as email capability has not been configured for the demo.
 * Various authentication and authorization functionality included with Devise and Pundit.
 
 
@@ -38,12 +37,15 @@ I added the following features not specified in the initial requirements:
 
 I did not prepare tests for this project, due to a lack of time. Generally, I consider minitest or RSpec for automated testing; Capybara for integration testing.
 
-There is an outstanding issue related to custom rendering of flash messages:  When an employer submits a new job opening form without completing all fields, the expected error message is displayed. However, if they resubmit the form and still have omitted at least one field, then additional error messages will appear. If the user then navigates away from the form without successfully submitting it, the flash message persists on the next page.
+The app has two methods for displaying flash messages -- one via the Devise gem, and one custom method. (I envision combining these into one sitewide function.)
+There is an outstanding issue related to custom rendering and emptying of flash messages. When an employer submits a new job opening form without completing all fields, the expected error message is displayed. However, if they resubmit the form and still have omitted at least one field, then additional error messages will appear. If the user then navigates away from the form without successfully submitting it, the flash message persists on the next page.
 
 
 ## Installation
 
-The demo is a Ruby on Rails application, developed on a Windows PC.
+The demo is a Ruby on Rails application (Ruby 2.5.3 / Rails 5.2.2) developed on Windows.
+
+I will assume you already have a working Ruby/Rails environment. To install:
 * Clone or [download](https://github.com/joecanas/applicado/archive/master.zip) the git repository
 
 In the application's main directory:
@@ -64,6 +66,8 @@ All test accounts have the same password:  "password"
 
 Start the server (!):
 * Run "rails s"
+
+The app is [hosted on Heroku](https://applicado.herokuapp.com/)
 
 
 # Questions
