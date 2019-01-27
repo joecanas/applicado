@@ -6,7 +6,11 @@
 <% end %>
 
 <% if @job_applications.empty? %>
-  <h2>You have not yet applied to any jobs</h2>
+  <% if current_user.admin? %>
+    <h2>No job applications have been submitted</h2>
+  <% else %>
+    <h2>You have not yet applied to any jobs</h2>
+  <% end %>
 
 <% else %>
   <% @job_applications.each do |application| %>
