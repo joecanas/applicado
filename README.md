@@ -43,14 +43,15 @@ There is an outstanding issue related to custom rendering of flash messages:  Wh
 
 ## Installation
 
-* Clone the code
+The demo is a Ruby on Rails application.
+* Clone or [download](https://github.com/joecanas/applicado/archive/master.zip) the git repository
+
+In the application's main directory:
 * Run "bundle install"
 * Run "rake db:migrate"
 * Run "rake db:seed"
-* Run "rails s"
 
-The seed file will create a dozen sample job openings, as well as test accounts for the three user classes.
-
+The seed file will create a dozen sample job openings, as well as test accounts for the three user classes:
 * applicant1@test.com
 * applicant2@test.com
 * applicant3@test.com
@@ -60,6 +61,9 @@ The seed file will create a dozen sample job openings, as well as test accounts 
 * admin1@test.com
 
 All test accounts have the same password:  "password"
+
+Start the server (!):
+* Run "rails s"
 
 
 # Questions
