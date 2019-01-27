@@ -1,0 +1,57 @@
+<% if current_user %>
+  <div class="tools-menu">
+    <% if current_user.applicant? %>
+      <h1>Applicant Tools</h1>
+      <ul>
+        <li><%= link_to "My job applications", user_job_applications_path(current_user) %></li>
+        <li><%= link_to "My Account", edit_user_registration_path %></li>
+        <li><%= link_to "Log out", destroy_user_session_path, :method => 'delete' %></li>
+      </ul>
+
+    <% elsif current_user.employer? %>
+      <h1>Employer Tools</h1>
+      <ul>
+        <li><%= link_to "Post a new job", new_job_path %></li>
+        <li><%= link_to "My job openings", dashboard_path %></li>
+        <li><%= link_to "My account", edit_user_registration_path %></li>
+        <li><%= link_to "Log out", destroy_user_session_path, :method => 'delete' %></li>
+      </ul>
+
+    <% elsif current_user.admin? %>
+      <h1>Administrator Tools</h1>
+      <ul>
+        <li><%= link_to "Job applications", job_applications_path %></li>
+        <li><%= link_to "My Account", edit_user_registration_path %></li>
+        <li><%= link_to "Log out", destroy_user_session_path, :method => 'delete' %></li>
+      </ul>
+    <% end %>
+  </div>
+<% end %>
+
+  <% if @jobs.blank? %>
+    <h2>No jobs currently available</h2>
+
+  <% else %>
+    <% if not current_user %>
+      <div id="welcome_anonymous_visitor">
+        <h1>Welcome!</h1>
+        <h2>Sign up or log in for full access to all of our features</h2>
+      </div>
+    <% end %>
+
+    <h2>Current job openings:</h2>
+    <div class="job-listings">
+      <% @jobs.each do |job| %>
+        <div class="job-entry">
+          <p class="title"><%= link_to job.title, job_path(job) %></p>
+          <p class="company"><%= job.company %></p>
+          <p class="location"><%= job.location %></p>
+          <p class="date"><%= job.posting_date %></p>
+          <p class="description"><%= truncate(job.description, length: 100) %></p>
+        </div>
+      <% end %>
+
+      <%= paginate @jobs %>
+    </div>
+  <% end %>
+</div>

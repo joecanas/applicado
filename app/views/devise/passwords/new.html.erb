@@ -1,0 +1,23 @@
+<h2>Forgot your password?</h2>
+
+<%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
+  <%= devise_error_messages! %>
+  <div id="forgot-password">
+    <div class="field">
+      <%= f.label :email %>
+      <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+    </div>
+
+    <br>
+
+    <div class="actions">
+      <% # = f.submit "Send me reset password instructions" %>
+      <input type="submit" value="Send me reset password instructions" onclick="alert('Apologies! This feature is in the development queue.'); return false">
+
+    </div>
+  </div>
+<% end %>
+
+<br><br>
+
+<%= render "devise/shared/links" %>

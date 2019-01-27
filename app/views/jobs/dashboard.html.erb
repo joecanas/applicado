@@ -1,0 +1,49 @@
+<% if current_user && current_user.employer? %>
+  <div id="dashboard">
+    <h1>Employer Dashboard</h1>
+
+    <% if @jobs.blank? %>
+      <h2>No jobs currently available</h2>
+
+    <% else %>
+      <h2>Current job openings:</h2>
+
+      <div class="job-listings">
+      <% @jobs.each do |job| %>
+        <div class="job-entry">
+          <p class="title"><%= link_to job.title, job_path(job) %></p>
+          <p class="company"><%= job.company %></p>
+          <p class="location"><%= job.location %></p>
+          <p class="date"><%= job.posting_date %></p>
+          <p class="description"><%= truncate(job.description, length: 100) %></p>
+        </div>
+
+        <b>Applicants</b>
+
+        <% if job.applicants.blank? %>
+          <p>Nobody has applied to this job</p>
+
+        <% else %>
+          <ol class="applicants">
+            <% job.applicants.each do |applicant| %>
+              <li>
+                <%= applicant.first_name + " " + applicant.last_name + " <" + applicant.email + ">" %><br>
+                <% app_values = JobApplication.where(user_id: applicant.id, job_id: job.id).pluck(:created_at, :message)[0] %>
+                <%= app_values[0].strftime("%b. %e, %Y | %l:%M %p") %><br>
+                <%= app_values[1] %><br>
+              </li>
+            <% end %>
+          </ol>
+        <% end %>
+
+        <br><br>
+
+      <% end %>
+      </div>
+
+      <%= paginate @jobs %>
+
+    <% end %>
+  </div>
+
+<% end %>

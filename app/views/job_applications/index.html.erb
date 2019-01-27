@@ -1,0 +1,33 @@
+
+<% if current_user.admin? %>
+  <h1>Job applications</h1>
+<% else %>
+  <h1>My job applications</h1>
+<% end %>
+
+<% if @job_applications.empty? %>
+  <h2>You have not yet applied to any jobs</h2>
+
+<% else %>
+  <% @job_applications.each do |application| %>
+    <div class="job-entry job-application">
+      <p class="title"><%= application.job.title %></p>
+
+      <% if current_user.admin? %>
+        <p class="company"><%= application.job.company %></p>
+        <p class="location"><%= application.job.location %></p>
+        <p class="date">Applied: <%= application.posting_date %></p>
+        <p class="applicant">Applicant: <%= application.applicant.first_name + " " + application.applicant.last_name + " <" + application.applicant.email + ">" %></p>
+
+      <% else %>
+        <p class="company"><%= application.job.company %></p>
+        <p class="location"><%= application.job.location %></p>
+        <p class="date">Applied: <%= application.posting_date %></p>
+        <br>
+        <p><%= button_to "View your application", user_job_application_path(current_user, application),  method: "get" %></p>
+      <% end %>
+    </div>
+  <% end %>
+<% end %>
+
+<%= paginate @job_applications %>

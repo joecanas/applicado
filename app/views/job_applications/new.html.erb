@@ -1,0 +1,22 @@
+<h3>Apply for this job</h3>
+
+<div class="job-entry">
+  <p class="title"><%= current_job.title %></p>
+  <p class="company"><%= current_job.company %></p>
+  <p class="location"><%= current_job.location %></p>
+  <p class="description"><%= truncate(current_job.description, length: 100) %></p>
+</div>
+
+<%= form_for(@job_application) do |f| %>
+  <%= f.hidden_field :user_id, :value => params[:user_id] %>
+  <%= f.hidden_field :job_id, :value => params[:job_id] %>
+
+  <div class="field">
+    <%= f.label :message, "Your message" %>
+    <%= f.text_area :message, label: "Message"  %>
+  </div>
+
+  <br>
+
+  <%= f.submit "Send Application" %>
+<% end %>

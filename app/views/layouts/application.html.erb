@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Applicado: The job marketplace for applicants and employers</title>
+    <%= csrf_meta_tags %>
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <div class="container">
+
+      <header>
+        <%= render "layouts/menu" %>
+      </header>
+
+      <div class="main">
+        <%= render "layouts/alerts" %>
+        <%= yield %>
+      </div>
+
+      <footer>
+        &copy; 2019 <b>Applicado</b>
+      </footer>
+
+    </div>
+  </body>
+</html>

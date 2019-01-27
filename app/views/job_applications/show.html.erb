@@ -1,0 +1,11 @@
+<h3>My job applications: Details</h3>
+
+<div class="job-entry job-application">
+  <p class="title"><%= link_to @job_application.job.title, job_path(@job_application.job) %></p>
+  <p class="company">Company: <%= @job_application.job.company %></p>
+  <p class="location">Location: <%= @job_application.job.location %></p>
+  <p class="date">Applied: <%= @job_application.posting_date %></p>
+  <p class="description">Message: <%= @job_application.message %></p>
+</div>
+
+<%= button_to "Back to all job applications", job_applications_path, method: "get"  %>

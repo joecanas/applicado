@@ -1,0 +1,22 @@
+<div class="job-entry single">
+  <p class="title"><%= @job.title %></p>
+  <p class="company"><%= @job.company %></p>
+  <p class="location"><%= @job.location %></p>
+  <p class="date"><%= @job.posting_date %></p>
+  <p class="description"><%= @job.description %></p>
+</div>
+
+<% if current_user.applicant? %>
+
+  <% if current_user.job_applications.collect(&:job).include?(@job) %>
+    <div class="already-applied">You applied to this job on 
+      <%= current_user.job_applications.where(
+        job_id: @job.id).pluck('created_at')[0].strftime("%b. %e, %Y at %l:%M %p") %></div>
+  <% else %>
+    <%= link_to "Apply", new_job_application_path(job_id: @job.id, user_id: current_user), method: "get", class: "btn" %>
+  <% end %>
+
+<% elsif policy(@job).update? %>
+    <%= button_to "Edit", edit_job_path, method: "get" %>
+    <%= button_to "Delete", job_path, method: "delete" %>
+<% end %>

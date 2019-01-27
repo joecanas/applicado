@@ -1,0 +1,12 @@
+
+<% if not flash.empty? %>
+  <div id="error_explanation">
+    <ul>
+      <% flash.each do |key, value| %>
+        <% Array(value).each do |item| %>
+          <li><%= item.html_safe %></li>
+        <% end %>
+      <% end %>
+    </ul>
+  </div>
+<% end %>

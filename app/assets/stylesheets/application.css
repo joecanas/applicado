@@ -1,0 +1,331 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+body {
+  background: #fff;
+  color: #000;
+  font: 14px/1.5em Helvetica, Arial, sans-serif;
+  margin: 20px auto;
+  width: 800px;
+}
+
+header {
+  border-bottom: 1px solid #333;
+  margin: 0 0 30px 0;
+  padding: 0 0 10px 0;
+}
+
+header .salutation {
+  float: right;
+}
+
+header .menu {
+  margin: 40px 0 0 0;
+}
+
+header .menu ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+header .menu ul:after {
+  clear: both;
+}
+
+header .menu ul li {
+  display: inline-block;
+  margin: 0 20px 0 0;
+}
+
+#logo {
+  display: inline-block;
+  font-size: 48px;
+  font-weight: bold;
+  margin: 10px 0;
+}
+
+#logo a {
+  text-decoration: none;
+}
+
+#tagline {
+  font-size: 16px;
+  font-style: italic;
+  font-weight: bold;
+  margin: 20px 0;
+}
+
+div#welcome_anonymous_visitor {
+  border-bottom: 1px dashed #999;
+  margin: 0 0 40px 0;
+  padding: 0 0 10px 0;
+}
+
+footer {
+  border-top: 1px solid #393;
+  color: #999;
+  margin: 50px 0;
+  padding: 10px 0 0 0;
+}
+
+.tools-menu {
+  margin: 0 0 40px 0;
+}
+
+.alert,
+#error_explanation {
+  background-color: #fff3cd;
+  border: 1px solid transparent;
+  border-color: #ffeeba;
+  border-radius: .25rem;
+  color: #856404;
+  font-weight: bold;
+  margin-bottom: 2rem;
+  position: relative;
+}
+
+.alert {
+  padding: 10px 20px;
+}
+
+.alert-primary {
+  background-color: #cce5ff;
+  border-color: #b8daff;
+  color: #004085;
+}
+
+.alert-info {
+  background-color: #d1ecf1;
+  border-color: #bee5eb;
+  color: #0c5460;
+}
+
+.alert-success {
+  background-color: #d4edda;
+  border-color: #c3e6cb;
+  color: #155724;
+}
+
+.alert-danger {
+  background-color: #f8d7da;
+  border-color: #f5c6cb;
+  color: #721c24;
+}
+
+.alert-warning,
+#error_explanation {
+  background-color: #fff3cd;
+  border-color: #ffeeba;
+  color: #856404;
+}
+
+a {
+  color: #693;
+}
+
+a:hover {
+  color: #4a7628;
+}
+
+.container h1 {
+  margin: 0 0 30px 0
+}
+
+#dashboard ol.applicants li {
+  background: #fafafa;
+  border-left: 1px solid #ccc;
+  margin: 0 0 20px 0;
+  padding: 8px;
+}
+
+.already-applied {
+  background: #ffd;
+  border: 1px solid #999;
+  border-radius: 4px;
+  display: inline-block;
+  font-style: italic;
+  padding: 5px 10px;
+}
+
+.job-listings {
+  margin: 30px 0;
+}
+
+.job-entry p.applicant {
+  display: block;
+}
+
+.job-entry {
+  margin: 0 0 25px 0;
+}
+
+.job-entry p {
+  display: inline-block;
+  margin: 0 10px 0 0;
+}
+
+.job-entry p.title {
+  display: block;
+  font-size: 16px;
+  font-weight: bold;
+  margin: 0;
+}
+
+.job-entry p.date {
+  font-size: 12px;
+  font-style: italic;
+}
+
+.job-entry p.company {
+  font-weight: bold;
+}
+
+.job-entry p.location:before {
+  content: '(';
+}
+
+.job-entry p.location:after {
+  content: ')';
+}
+
+.job-entry p.description {
+  display: block;
+  margin: 5px 0 0 0;
+}
+
+.job-entry.single .title {
+  font-size: 21px;
+  margin: 0 0 10px 0;
+}
+
+.job-entry.single .description {
+  margin: 15px 0 0 0;
+}
+
+label {
+  display: inline-flex;
+  width: 25%;
+}
+
+form#new_user #login-form label,
+form#new_user #forgot-password label {
+  min-width: 75px;
+  width: auto;
+}
+
+.field {
+  display: block;
+  margin: 0 0 5px 0;
+}
+
+.field input,
+.field textarea {
+  border: 1px solid #ccc;
+  height: 24px;
+  outline: none;
+  padding: 1px 3px;
+  width: 35%;
+}
+
+.field textarea {
+  font-family:  Helvetica, Arial, sans-serif; 
+  min-height: 200px;
+  vertical-align: top;
+}
+
+input[type=radio],
+input[type=checkbox] {
+  margin: 0 5px 0 0;
+  padding: 0;
+  vertical-align: middle;
+  width: 20px;
+}
+
+.btn,
+button,
+input[type=submit] {
+  /* default for <button>, but useful for <a> */
+  background-color: #9555af;
+  border: solid 1px transparent;
+  border-radius: 4px;
+  color: #ffffff;
+  cursor: pointer;
+  display: inline-block;
+  font-size: 14px;
+  margin: 2px 0;
+  outline: none;
+  padding: 0.5em 1em;
+  text-align: center;
+  text-decoration: none;
+}
+
+.btn:hover,
+.btn:focus,
+button:hover,
+button:focus,
+input[type=submit]:hover,
+input[type=submit]:focus {
+  background-color: white;
+  border-color: currentColor;
+  color: #9555af;
+}
+
+.field_with_errors {
+  display: inline;
+}
+
+.field_with_errors input,
+.field_with_errors textarea {
+  background-color: #f8d7da;
+  border-color: #f5c6cb;
+  color: #721c24;
+}
+
+p.required {
+  float: right;
+  font-style: italic;
+}
+
+form.button_to {
+  display: inline;
+  margin: 0 10px 0 0;
+}
+
+.pagination span {
+  margin: 0 10px 0 0;
+}
+
+.prev {
+
+}
+
+.next {
+  
+}
+
+.page {
+  
+}
+
+.page.current {
+  border-radius: 4px;
+  font-weight: bold;
+  background: #ffd;
+  border: 1px solid #fcc;
+  padding: 5px 8px;
+}
+

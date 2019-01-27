@@ -1,0 +1,37 @@
+<div id="logo"><%= link_to "Applicado", root_path %></div>
+<div id="tagline">The job marketplace for applicants and employers</div>
+
+<div class="menu">
+  <% if !current_user %>
+    <ul>
+      <li><%= link_to "Sign up", new_user_registration_path %></li>
+      <li><%= link_to "Log in", new_user_session_path %></li>
+    </ul>
+
+  <% else %>
+    <div class="salutation">
+      Welcome, <%= current_user.first_name %>
+    </div>
+
+    <% if current_user.employer? %>
+      <ul>
+        <li><%= link_to "Home", root_path %></li>
+        <li><%= link_to "Post a new job", new_job_path %></li>
+        <li><%= link_to "My job openings", dashboard_path %></li>
+        <li><%= link_to "My account", edit_user_registration_path %></li>
+        <li><%= link_to "Log out", destroy_user_session_path, :method => 'delete' %></li>
+      </ul>
+
+    <% else %>
+      <ul>
+        <li><%= link_to "Home", root_path %></li>
+        <li>
+          <%= link_to "My job applications", job_applications_path unless current_user.admin? %>
+          <%= link_to "Job applications", job_applications_path if current_user.admin? %>
+        </li>
+        <li><%= link_to "My Account", edit_user_registration_path %></li>
+        <li><%= link_to "Log out", destroy_user_session_path, :method => 'delete' %></li>
+      </ul>
+    <% end %>
+  <% end %>
+</div>
