@@ -101,6 +101,29 @@ A. For the demo, employers can enter any value into the "Company" field of a job
 
 # Assumptions:
 
+## Why Ruby on Rails?
+
+My main assumption was that this assignment was intended solely to demonstrate my general approach to application development. The "final product" after one week of effort was never intended for production release (even though Rails prototypes occasionally/infamously find their way into production).
+
+I chose Ruby on Rails primarily to speed up development using available libraries/gems for common functionality (authentication, authorization, pagination, etc.). However, there are tradeoffs when using a framework (regardless of programming language) -- even for rapid demo/prototype work. In a true production-bound project, an engineering team should consider those tradeoffs with regard to business strategy, time to market, scalability, team size, etc. when selecting (or inheriting) a tech stack. 
+
+
+## [System quality attributes](https://en.wikipedia.org/wiki/List_of_system_quality_attributes)
+
+The top quality traits (so-called "-ilities") I consider when developing an application:
+* Security
+* Usability
+* Performance
+* Availability (Reliability)
+* Scalability
+* Extensibility
+* Maintainability (Flexibility/Testability)
+
+For this demo, I considered these and other traits -- and chose to pursue only some of them in the interest of time.
+
+
+## What should this demo application do (beyond the initial requirements)?
+
 At signup, users must provide a valid email address as their username. Initially, there will not be any email verification of new accounts, but a future version could implement a two-step email confirmation process.
 
 The username (email) will be case insensitive.
@@ -157,6 +180,10 @@ The job entry form "description" field will accept any text, but it will not for
 
 # Proposed Future Development
 
+## What features could be added to enhance a job board application?
+
+Given more time, business direction, resources, etc., I would consider the following (not an exhaustive list):
+
 Evaluate and modify UI/UX:
 * Validate behavior and fulfillment of requirements with internal stakeholders.
 * Conduct user testing and incorporate feedback into subsequent iterative design stage.
@@ -165,6 +192,7 @@ Evaluate and modify UI/UX:
 * Style the application to reflect company and product branding (consider Bootstrap + Bootstrap Forms).
 
 Add content pages:
+* Custom error pages
 * Terms of Use
 * Privacy Policy
 * About Us
@@ -189,7 +217,7 @@ Add functionality:
   * Add predictive location lookup on new job post form, to speed data entry and eliminate naming inconsistencies
 
 
-## Additional enhancements to consider:
+Additional enhancements to consider:
 
 * Implement a rational password policy (e.g., require strong passwords conforming to industry best practices).
 
