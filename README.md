@@ -217,7 +217,7 @@ Add functionality:
   * Add predictive location lookup on new job post form, to speed data entry and eliminate naming inconsistencies
 
 
-Additional enhancements to consider:
+## Additional enhancements to consider:
 
 * Implement a rational password policy (e.g., require strong passwords conforming to industry best practices).
 
