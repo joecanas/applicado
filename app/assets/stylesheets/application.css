@@ -216,6 +216,10 @@ a:hover {
   margin: 15px 0 0 0;
 }
 
+.job-application form.button_to {
+  display: block;
+}
+
 label {
   display: inline-flex;
   width: 25%;
