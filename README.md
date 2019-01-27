@@ -62,9 +62,7 @@ The seed file will create a dozen sample job openings, as well as test accounts 
 All test accounts have the same password:  "password"
 
 
-# QUESTIONS AND ASSUMPTIONS
-
-## Questions:
+# Questions
 
 Q. Should there be a master administration account that can view all job openings regardless of employer? If so, should the admin also be able to post job openings on behalf of any employer?
 
@@ -97,7 +95,7 @@ Q. Should an employer only be able to post jobs for a single entity (i.e., "Comp
 A. For the demo, employers can enter any value into the "Company" field of a job posting; thus, they can post jobs on behalf of multiple companies. This is practical (and easier to implement); however, it might not be suited to actual business requirements. Alternatively, the application could collect a company name from new employers during the signup process, and use that value similarly to first_name and last_name. (Should subsequent company name changes affect existing job postings?)
 
 
-## Assumptions:
+# Assumptions:
 
 At signup, users must provide a valid email address as their username. Initially, there will not be any email verification of new accounts, but a future version could implement a two-step email confirmation process.
 
@@ -153,7 +151,7 @@ Applicants will always see a complete listing of all jobs, but they will see a "
 The job entry form "description" field will accept any text, but it will not format line breaks or strip HTML or JavaScript. A future enhancement should provide a WYSIWYG editor as well as translate textarea line breaks into HTML (or Markdown).
 
 
-# PROPOSED FUTURE DEVELOPMENT
+# Proposed Future Development
 
 Evaluate and modify UI/UX:
 * Validate behavior and fulfillment of requirements with internal stakeholders.
