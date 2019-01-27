@@ -7,8 +7,8 @@ class User < ApplicationRecord
   # Three roles are supported within the application...
   enum role: [:applicant, :employer, :admin]
   # ... but only allow signups for the first two roles
-  # validates :role, inclusion: { in: ['applicant', 'employer'],
-  #   message: "unauthorized! Please select 'Applicant' or 'Employer' as your account type." }, on: :create
+  validates :role, inclusion: { in: ['applicant', 'employer'],
+    message: "unauthorized! Please select 'Applicant' or 'Employer' as your account type." }, on: :create
 
   # Require custom name fields on signup form and account edit form
   validates :first_name, :last_name, presence: true #, on: :create
