@@ -173,7 +173,7 @@ Each employer has its own user account correlating to that employer identity. No
 
 Listings of job openings for all users will be paginated vs. displayed in a continuous static or infinite scroll.
 
-Pagination will be configurable within the application code, vs. user-customizeable within the browser.
+Pagination will be configurable within the application code, vs. user-customizable within the browser.
 
 There won't be a search option to find specific jobs by, e.g., keyword, phrase or employer.
 
@@ -210,7 +210,7 @@ Add functionality:
 * Additional data fields for job posts
 * Employer profiles
 * Enhanced location filtering (consider Geocoder for identifying location ranges for searching)
-* Application process management * provide workflow tools so applicants and employers can manage applications and interact throughout defined hiring process stages.
+* Application process management - provide workflow tools so applicants and employers can manage applications and interact throughout defined hiring process stages
 * Email capability to support two-step signup confirmations, password resets, etc.
 * Social login (consider Omniauth)
 * Accepting payments, e.g., from employers (consider Stripe)
@@ -225,7 +225,7 @@ Add functionality:
 
 * Implement a rational password policy (e.g., require strong passwords conforming to industry best practices).
 
-* Separate the concept of user identity and user account, and allow multiple identities to link to a single user account. Keep the concepts of user account and credentials separate, to simplify the process of implementing third-party identity proviers, allowing users to change their username and linking multiple identities to a single user account.  In practical terms, it may be helpful to have an internal global identifier for every user and link their profile and authentication identity via that ID as opposed to piling it all in a single record.
+* Separate the concept of user identity and user account, and allow multiple identities to link to a single user account. Keep the concepts of user account and credentials separate, to simplify the process of implementing third-party identity providers, allowing users to change their username and linking multiple identities to a single user account.  In practical terms, it may be helpful to have an internal global identifier for every user and link their profile and authentication identity via that ID as opposed to piling it all in a single record.
 
 * Implement rules on session length: Consider how long a user should be able to be inactive before re-authenticating. Verify user identity in all active sessions if someone performs a password reset. Prompt for authentication or 2nd factor if a user changes core aspects of their profile or when they're performing a sensitive action. Consider whether it makes sense to disallow logging in from more than one device or location at a time.
 
