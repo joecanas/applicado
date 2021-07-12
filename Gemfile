@@ -6,7 +6,7 @@ ruby '2.5.3'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.2.2'
 # Use Puma as the app server
-gem 'puma', '>= 3.12.4'
+gem 'puma', '>= 4.3.8'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
 # Use Uglifier as compressor for JavaScript assets
@@ -26,7 +26,18 @@ gem 'figaro'
 # Authorization
 gem 'pundit'
 # Pagination
-gem 'kaminari'
+gem "kaminari", ">= 1.2.1"
+
+gem "addressable", ">= 2.8.0"
+gem "railties", ">= 5.2.2.1"
+gem "activerecord", ">= 5.2.4.5"
+gem "nokogiri", ">= 1.11.4"
+gem "rack", ">= 2.1.4"
+gem "websocket-extensions", ">= 0.1.5"
+gem "activesupport", ">= 5.2.4.3"
+gem "actionpack", ">= 5.2.4.6"
+gem "activestorage", ">= 5.2.4.3"
+gem "actionview", ">= 5.2.4.4"
 
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 4.0'
